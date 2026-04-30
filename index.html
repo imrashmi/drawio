@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="page-title"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/imrashmi/dev-assests@cdn/Assets/Logo/logo_transparent_512.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://cdn.jsdelivr.net/gh/imrashmi/dev-assests@cdn/Assets/Img/jpg/150674403813646273834b3fb.jpg') no-repeat center center/cover;
+            filter: blur(6px);
+            transform: scale(1.05);
+            z-index: -1;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 600px;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            width: 256px;
+            margin-bottom: 15px;
+            margin-top: -55px;
+        }
+
+        h2 {
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: #fff;
+            padding: 12px 25px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <img src="https://cdn.jsdelivr.net/gh/imrashmi/dev-assests@cdn/Assets/Logo/logo_transparent_512.png" alt="Logo" class="logo">
+        
+        <h1 id="name"></h1>
+        <h2 id="subtitle"></h2>
+        <p id="about"></p>
+
+        <div class="btn-container">
+            <a href="https://inf.devrashmi.in/docs/" class="btn">Docs</a>
+            <a href="https://imrashmi.github.io/drawio/src/main/webapp/" class="btn" target="_blank">Visit Draw.io</a>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <!-- JS replaces PHP -->
+    <script>
+        const data = {
+            name: "RASHMI R. SWAIN",
+            location: "Odisha, India",
+            profession: "Research Scholar, Electrical Engg.",
+            about: "Welcome to my personal website. I am passionate about technology, coding, and designing modern micro-grid for seamless integration of multiple distributed sources like PV, Fuel Cell, BESS, Hydrogen Electrolyzer etc."
+        };
+
+        // Inject content
+        document.getElementById("page-title").innerText = `${data.name} | Home`;
+        document.getElementById("name").innerText = data.name;
+        document.getElementById("subtitle").innerText = `${data.profession} | ${data.location}`;
+        document.getElementById("about").innerText = data.about;
+        document.getElementById("footer").innerText = `© ${new Date().getFullYear()} ${data.name}`;
+    </script>
+
+</body>
+</html>
