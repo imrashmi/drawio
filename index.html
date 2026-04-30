@@ -41,7 +41,7 @@
             padding: 50px;
             border-radius: 15px;
             text-align: center;
-            max-width: 600px;
+            max-width: 650px;
             backdrop-filter: blur(5px);
         }
 
@@ -58,9 +58,10 @@
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.6;
             margin-bottom: 25px;
+            white-space: pre-line;
         }
 
         .btn-container {
@@ -108,16 +109,14 @@
 
     <footer id="footer"></footer>
 
-    <!-- JS replaces PHP -->
     <script>
         const data = {
             name: "RASHMI R. SWAIN",
             location: "Odisha, India",
             profession: "Research Scholar, Electrical Engg.",
-            about: "Welcome to my personal website. I am passionate about technology, coding, and designing modern micro-grid for seamless integration of multiple distributed sources like PV, Fuel Cell, BESS, Hydrogen Electrolyzer etc."
+            about: `Welcome to my personal website. This is the last supported version of Draw.io with Visio (VSDX) support. As there's no where else I could find hosting this easily online, I have forked Draw.io at this version. This means you can browse to https://mattie47.github.io/drawio/src/main/webapp/ and then export your drawio diagram to Visio again 🙌 Note: This is purely a fork of draw.io. I won't make any changes, updates, or provide any support.`
         };
 
-        // Inject content
         document.getElementById("page-title").innerText = `${data.name} | Home`;
         document.getElementById("name").innerText = data.name;
         document.getElementById("subtitle").innerText = `${data.profession} | ${data.location}`;
