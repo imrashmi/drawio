@@ -16,7 +16,7 @@
         }
 
         body {
-            min-height: 100vh;
+            min-height: 50vh;
             position: relative;
             display: flex;
             align-items: center;
@@ -37,17 +37,20 @@
 
         .overlay {
             background: rgba(0, 0, 0, 0.6);
-            padding: clamp(20px, 4vw, 50px);
+            padding: clamp(50px, 4vw, 50px);
             border-radius: 1.2rem;
             text-align: center;
             max-width: min(90vw, 700px);
             width: 100%;
             backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
         }
 
         .logo {
             width: clamp(120px, 20vw, 260px);
-            margin-bottom: 1rem;
+            margin-bottom: -2.5em;
+            margin-top: -2.5em;
         }
 
         h1 {
@@ -98,6 +101,8 @@
             color: #ccc;
             text-align: center;
             width: 100%;
+            align-items: center;
+            justify-content: center;
         }
 
         a.inline-link {
@@ -118,8 +123,8 @@
         <div class="btn-container">
             <a href="https://imrashmi.github.io/drawio/Readme.html" class="btn">Docs</a>
             <a href="https://imrashmi.github.io/drawio/src/main/webapp/" class="btn" target="_blank">Visit Draw.io</a>
+            <footer id="footer"></footer>
         </div>
-        <footer id="footer"></footer>
     </div>
 
 
@@ -130,7 +135,8 @@
             profession: "Research Scholar, Electrical Engg.",
             about: `This is the last supported version of Draw.io with Visio (VSDX) support. As there's no where else I could find hosting this easily online, I have forked Draw.io at this version. This means you can browse to <a href="https://mattie47.github.io/drawio/src/main/webapp/" target="_blank" class="inline-link">Official Draw.io WebApp v.26.0</a> and then export your drawio diagram to Visio again 🙌
             
-            Note: This is purely a fork of draw.io. I won't make any changes, updates, or provide any support.`
+            Note: This is purely a fork of draw.io. I won't make any changes, updates, or provide any support.`,
+            company: '<a href="https://devrashmi.in" target="_blank" class="inline-link">RDL</a>'
         };
 
         document.getElementById("page-title").innerText = `${data.name} | Home`;
@@ -140,7 +146,7 @@
         // ✅ FIXED: render HTML
         document.getElementById("about").innerHTML = data.about;
 
-        document.getElementById("footer").innerText = `© ${new Date().getFullYear()} ${data.name}`;
+        document.getElementById("footer").innerHTML = `© ${new Date().getFullYear()} ${data.name}/${data.company}`;
     </script>
 
 </body>
